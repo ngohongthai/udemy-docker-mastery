@@ -1,2 +1,41 @@
 #Check docker version
 docker version
+-----------
+#run image named nginx for web server
+docker container run --publish 80:80 nginx
+
+1. Downloaded image nginx from Docker Hub
+2. Start a new container from that image
+3. Opened port 80 on host IP
+4. Router that traffic to the container IP, port 80
+// Chú ý rằng, nếu như cổng 80 đã được dùng thì sẽ báo lỗi có thể thay bằng 8080:80, thì khi gọi đến server phải
+gọi đến cổng 8080
+
+docker container run --publish 80:80 --detach nginx
+//Thêm "--detach" để chạy dưới background
+-----------
+docker container ls
+//List all running container
+
+docker container ls -a
+//List both runnning and history containers
+
+docker container rm <container ID> <container ID> ...
+//Remove docker (Chỉ remove những thằng đã stop)
+//Có thể stop trước khi rm, nhưng cũng có thể dùng -f để force delete
+docker container rm -f <container ID>
+
+-----------
+docker container stop <container ID>
+//Stop container
+-----------
+docker container run --publish 80:80 --detach --name webhost nginx
+//Đặt tên cho container nginx là webhost
+
+docker container logs webhost
+//Show log của webhost
+
+docker container top webhost
+//Show process of webhost runing inside the containers
+
+-----------

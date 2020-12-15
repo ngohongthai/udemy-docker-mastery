@@ -1,0 +1,19 @@
+#Getting a Shell Inside containers
+
+docker container run -it -start new container interactively
+docker container exec -it -run additiional command in existing container
+
+
+ex:
+docker container run -it --name ubuntu ubuntu
+root@bd30776aa09f:/# apt-get update
+
+# Run ubuntu again
+❯ docker container start -ai ubuntu
+root@bd30776aa09f:/#
+
+
+### If I want to actually see the shell inside a running container that's already running something 
+### like MySQL or Nginx.
+
+docker container exec -it mysql bash

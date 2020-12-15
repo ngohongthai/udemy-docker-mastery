@@ -1,0 +1,28 @@
+#Show network
+docker network ls
+
+#Inspect a network
+docker network inspect
+
+#Create a network
+docker network create --driver
+
+#Attach a network to container (add <ContainerID> to <NetworkID>)
+docker network connect <NetworkID> <ContainerID>
+
+#Detach a network from container (remove <ContainerID> to <NetworkID>)
+docker network disconnect <NetworkID> <ContainerID>
+
+
+example:
+❯ docker network create my_app_net
+#-> create network named my_app_net
+
+❯ docker container run -d --name new_nginx --network my_app_net nginx
+#-> Run container in my_app_net network
+
+❯ docker network inspect my_app_net 
+# -> Check containers in network
+
+# Khi trong 1 network có 2 container, có thể check ping giữa 2 container này bằng lệnh:
+docker container exec -it my_nginx ping new_nginx
