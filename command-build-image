@@ -1,0 +1,8 @@
+
+#For testing
+docker image build -t <name> .
+docker container run -p 80:80 --rm <name>
+
+# 
+- docker image prune: to clean up just "dangling" images
+- docker system prune: will clean up everything
