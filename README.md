@@ -13,3 +13,11 @@
 
 `docker container run --publish 80:80 --detach nginx `
 
+> List container
+> 
+`docker container ls`
+
+> Stop Container
+> 
+`docker container stop <container ID>
+
