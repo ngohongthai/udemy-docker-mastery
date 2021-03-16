@@ -52,4 +52,10 @@
 
 ### Docker Image
 
+> **Build image**
+> 
+
+`docker image build -t <image name> .`
+
+<br>
 
