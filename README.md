@@ -1,4 +1,4 @@
-### Note
+### Basic
 
 <br>
 
@@ -16,7 +16,8 @@
 > **Run docker in the background, using `--detach`**
 > 
 
-`docker container run --publish 80:80 --detach --name webhost nginx `
+`docker container run --publish 80:80 --detach --name webhost nginx ` <br>
+`docker container run --name mongo -d mongo`
 
 <br>
 
@@ -29,9 +30,26 @@
 
 > **Stop Container**
 > 
-`docker container stop <container ID>`
+`docker container stop <container ID>` <br>
+`docker container stop <container Name>`
 
 <br>
 
+
+> **Show docker logs**
+> 
+`docker container logs <container Name>` <br>
+`docker container logs webhost`
+
+<br>
+
+> **Remove container**
+> 
+`docker container rm <container ID> <container ID>...`
+
+<br>
+
+
+### Docker Image
 
 
